@@ -9,3 +9,17 @@
     top: 450px;
     left:45px;
    }  
+.baloon {
+    position: absolute;
+    width: 180px;
+    z-index: 1; 
+    left: 450px;
+    top: 280px;
+}
+p {
+    position: absolute;
+    margin-left: 450px ;
+    z-index: 2;
+    top: 300px
+}
+
