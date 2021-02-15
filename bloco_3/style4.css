@@ -4,4 +4,6 @@
 ol:hover {
     background-color: violet;
 }
-
+li:active {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
