@@ -1,18 +1,24 @@
 div:hover{
     border-style: solid;
 }
-div:nth-child(3) { 
+div:nth-child(3) h3 { 
     color:blue;
+    text-decoration:underline;
 }
-div:nth-child(4) {
+div:nth-child(4) h3 {
     color: purple;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-div:nth-child(5) {
-    color: yellow;
+div:nth-child(5) h3 {
+    color: rgb(160, 160, 0);
+    font-variant-caps: all-small-caps;
+    font-size: larger;
 }
-div:nth-child(6) {
+div:nth-child(6) h3 {
     color: darkred;
+    font-stretch:ultra-condensed;
 }
-div:nth-child(7) {
+div:nth-child(7) h3 {
     color:lightseagreen;
+    font-family:'Courier New', Courier, monospace ;
 }
