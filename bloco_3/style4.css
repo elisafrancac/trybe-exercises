@@ -7,3 +7,6 @@ ol:hover {
 li:active {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+li{
+    list-style: none;
+}
