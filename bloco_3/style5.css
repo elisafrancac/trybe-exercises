@@ -1,3 +1,18 @@
 div:hover{
     border-style: solid;
 }
+div:nth-child(3) { 
+    color:blue;
+}
+div:nth-child(4) {
+    color: purple;
+}
+div:nth-child(5) {
+    color: yellow;
+}
+div:nth-child(6) {
+    color: darkred;
+}
+div:nth-child(7) {
+    color:lightseagreen;
+}
