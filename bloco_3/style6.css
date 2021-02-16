@@ -17,6 +17,9 @@ h1 {
 li {
     font-size: 20px;
 }
+ol li em {
+    font-weight: bold;
+}
 /*
  - Faça com que todos os itens de Listas Ordenadas tenham uma cor de fundo amarela. 
  Se a numeração do item for PAR, faça a cor de fonte ser verde. Se o número for considerado primo,
