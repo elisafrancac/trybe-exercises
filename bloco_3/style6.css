@@ -10,6 +10,9 @@ ol li:nth-child(even){
 h1,h3{
     color: red;
 }
+h1 {
+    font-size: 40px;
+    border: 1px black solid;
 
 /*
  - Faça com que todos os itens de Listas Ordenadas tenham uma cor de fundo amarela. 
