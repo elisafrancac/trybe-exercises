@@ -27,7 +27,22 @@ ul:first-of-type li:nth-child(-n+3)[class*='java']{
     background-color: pink;
 }
 
-
+.stack:hover{
+    font-weight: bolder;
+    color: orange;
+}
+.w3_Trybe:hover{
+    font-weight: bolder;
+    color:green;
+}
+.mdn:hover{
+    font-weight: bolder;
+    color:black;
+}
+.dev_docs:hover{
+    font-weight: bolder;
+    color: yellow;
+}
 /*
  - Faça com que todos os itens de Listas Ordenadas tenham uma cor de fundo amarela. 
  Se a numeração do item for PAR, faça a cor de fonte ser verde. Se o número for considerado primo,
