@@ -7,9 +7,9 @@
         font-size: 20px;
         height: 50px;
         width: 200px;
-        display: block;
+        display: inline-block;
         text-align: center;
-        margin-left: 530px;
+            
       }
 
       .second {
@@ -19,7 +19,6 @@
         text-align: center;
         width: 300px;
         display: inline-block;
-        margin-left: 327px;
       }
 
      
@@ -30,6 +29,9 @@
         text-align: center;
         width: 300px;
         display: inline-block;
+      }
+      section:first-of-type {
+          text-align: center;
       }
     section:nth-of-type(2) li{
         display: inline-block;
