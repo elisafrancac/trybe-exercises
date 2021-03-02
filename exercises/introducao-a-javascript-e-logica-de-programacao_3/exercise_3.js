@@ -15,5 +15,3 @@ for (let lineIndex = 0; lineIndex <= n; lineIndex = lineIndex + 1) {
       line = '';
       position -= 1;
 }
-
-
