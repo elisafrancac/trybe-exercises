@@ -22,3 +22,8 @@ centerDivText.innerHTML = "Cada dia um degrau, cada degrau uma luta, cada luta u
 let leftDiv = document.createElement('div');
 document.body.lastElementChild.appendChild(leftDiv);
 leftDiv.className = "left-content";
+
+// Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
+let rightDiv = document.createElement('div');
+document.body.lastElementChild.appendChild(rightDiv);
+rightDiv.className = "right-content";
