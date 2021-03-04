@@ -12,3 +12,8 @@ mainDiv.className = "main-content";
 let centerDiv = document.createElement('div');
 document.body.lastElementChild.appendChild(centerDiv);
 centerDiv.className = "center-content";
+
+// Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
+let centerDivText = document.createElement('p');
+document.body.lastElementChild.firstElementChild.appendChild(centerDivText);
+centerDivText.innerHTML = "Cada dia um degrau, cada degrau uma luta, cada luta um aprendizado. O aprendizado é como o horizonte: não há limites. A sabedoria não vem do acerto, mas do aprendizado com os erros. Transforme cada novo desafio em oportunidades de aprendizado e crescimento.";
