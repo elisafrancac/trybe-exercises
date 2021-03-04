@@ -17,3 +17,8 @@ centerDiv.className = "center-content";
 let centerDivText = document.createElement('p');
 document.body.lastElementChild.firstElementChild.appendChild(centerDivText);
 centerDivText.innerHTML = "Cada dia um degrau, cada degrau uma luta, cada luta um aprendizado. O aprendizado é como o horizonte: não há limites. A sabedoria não vem do acerto, mas do aprendizado com os erros. Transforme cada novo desafio em oportunidades de aprendizado e crescimento.";
+
+// Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+let leftDiv = document.createElement('div');
+document.body.lastElementChild.appendChild(leftDiv);
+leftDiv.className = "left-content";
