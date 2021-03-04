@@ -7,3 +7,8 @@ exerciseTitle.innerHTML = "Exercício 5.2 - JavaScript DOM";
 let mainDiv = document.createElement('div');
 document.body.appendChild(mainDiv);
 mainDiv.className = "main-content";
+
+// Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+let centerDiv = document.createElement('div');
+document.body.lastElementChild.appendChild(centerDiv);
+centerDiv.className = "center-content";
