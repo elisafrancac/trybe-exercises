@@ -59,3 +59,13 @@ for (let index = 0; index < elementsList.length; index += 1) {
     elementListItem.innerHTML = listItem;
     unorderList.appendChild(elementListItem);
 }
+
+// Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+let titleQuantity = 3;
+
+let titleTags = document.querySelector('.main-content');
+
+for (let index = 0; index < titleQuantity; index += 1) {
+    let elementTitleItem = document.createElement('h3');
+    mainDiv.appendChild(elementTitleItem);
+}
