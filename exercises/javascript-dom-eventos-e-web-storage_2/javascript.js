@@ -89,3 +89,6 @@ for(let index = 0; index < h3List.length; index += 1) {
 
 // 3. Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
 document.body.lastElementChild.removeChild(leftDiv);
+
+// 4. Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div;
+document.querySelector('.right-content').style.marginRight = 'auto';
