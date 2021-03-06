@@ -57,7 +57,7 @@ function changeColorHoliday() {
     let holidayButton = document.querySelector('#btn-holiday');
     let holidays = document.querySelectorAll('.holiday');
     let backgroundColor = 'rgb(238,238,238)';
-    let backgroundNewColor = 'white'
+    let backgroundNewColor = 'white';
 
     holidayButton.addEventListener('click', function() {
         for (let index = 0; index < holidays.length; index += 1) {
@@ -81,3 +81,24 @@ function createFridayButton(string) {
 
 }
 createFridayButton('Sexta-feira');
+
+// Exercício 5
+function changeFridayText(array) {
+    let fridayButton = document.querySelector('#btn-friday');
+    let fridays = document.querySelectorAll('.friday');
+    let fridayNewText = 'Sexta-feira';
+
+    fridayButton.addEventListener('click',fridayConditional);
+    
+    function fridayConditional() {
+        for (let index = 0; index < fridays.length; index += 1) {
+            if (fridays[index].innerHTML !== fridayNewText) {
+                fridays[index].innerHTML = fridayNewText;
+            } else {
+                fridays[index].innerHTML = array[index];
+            }
+        }
+    }
+}
+let fridaysArray = [ 4, 11, 18, 25 ];
+changeFridayText(fridaysArray);
