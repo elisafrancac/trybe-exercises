@@ -48,7 +48,6 @@ function createButton(string) {
     button.id = 'btn-holiday';
     button.innerText = string;
     buttonsContainer.appendChild(button);
-    console.log(button);
 
 }
     createButton('Feriados')
@@ -71,3 +70,14 @@ function changeColorHoliday() {
     })
 }
 changeColorHoliday()
+
+// Exercício 4
+function createFridayButton(string) {
+    const fridayButtonsContainer = document.querySelector('.buttons-container');
+    const fridayButton = document.createElement('button');
+    fridayButton.id = 'btn-friday';
+    fridayButton.innerText = string;
+    fridayButtonsContainer.appendChild(fridayButton);
+
+}
+createFridayButton('Sexta-feira');
