@@ -42,13 +42,16 @@ function createMonthDays() {
     createMonthDays();
   
   // Exercicio 2
-function createButton(){
+function createButton(string){
     const buttonsContainer = document.querySelector('.buttons-container');
     const button = document.createElement('button');
     button.id = 'btn-holiday';
+    button.innerText = string;
     buttonsContainer.appendChild(button);
     console.log(button);
 
 }
-    createButton()
+    createButton('Feriados')
+
+
 
