@@ -137,3 +137,15 @@ function customTask(stringTask) {
   
   customTask('Cozinhar:');
 
+  // Exercício 8
+  function subtitleTask(subtitleColor) {
+
+    let tasks = document.querySelector('.my-tasks');
+    let taskBackground = document.createElement('div');
+    
+    taskBackground.className = 'task';
+    taskBackground.style.backgroundColor = subtitleColor;
+    tasks.appendChild(taskBackground);
+  }
+  subtitleTask('blue');
+  
