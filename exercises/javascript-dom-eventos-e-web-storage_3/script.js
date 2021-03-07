@@ -123,3 +123,17 @@ function monthDaysMouseOut() {
 };
 zoomMonthDays();
 monthDaysMouseOut();
+
+
+// Exercício 7
+function customTask(stringTask) {
+
+    let tasks = document.querySelector('.my-tasks');
+    let taskName = document.createElement('span');
+  
+    taskName.innerHTML = stringTask;
+    tasks.appendChild(taskName);
+  }
+  
+  customTask('Cozinhar:');
+
