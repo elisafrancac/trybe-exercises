@@ -102,3 +102,24 @@ function changeFridayText(array) {
 }
 let fridaysArray = [ 4, 11, 18, 25 ];
 changeFridayText(fridaysArray);
+
+// Exercício 6
+// Para realizar essa questão foi necessário consultar o gabarito.
+function zoomMonthDays() {
+    let zoomDay = document.getElementById('days');
+
+    zoomDay.addEventListener('mouseover', function(event) {
+        event.target.style.fontSize = '35px';
+        event.target.style.fontWeight = '500';
+      })
+    };
+function monthDaysMouseOut() {
+    let zoomDay = document.getElementById('days');
+      
+    zoomDay.addEventListener('mouseout', function(event) {
+    event.target.style.fontWeight = '200';
+    event.target.style.fontSize = '20px';
+    })
+};
+zoomMonthDays();
+monthDaysMouseOut();
