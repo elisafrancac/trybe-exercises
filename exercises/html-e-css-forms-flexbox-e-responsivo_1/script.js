@@ -135,7 +135,16 @@ function clickSubmit() {
     })
 }
 
+function clickClear() {
+    let divContent = document.querySelector('.form_infos');
+    let clearButton = document.querySelector('#clear-button');
+    clearButton.addEventListener('click', function () {
+      divContent.innerHTML = '';
+    });
+  }
+
 window.onload = function startSession() {
     crateStatesOptions();
-    clickSubmit()
+    clickSubmit();
+    clickClear();
 };
