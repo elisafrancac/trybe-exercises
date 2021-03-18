@@ -52,5 +52,33 @@
             </label>   
             <br>
         </fieldset>
+        <fieldset class="div-fieldset input-elements">
+            <legend>Dados do último emprego</legend>
+
+            <label for="resumo-curriculo">Resumo do currículo:</label>
+            <br>
+            <textarea name="resumo-curriculo" id="resumo-curriculo" cols="30" rows="10" maxlength="1000" 
+            required placeholder="Digite aqui um resumo para seu currículo com no máximo 1000 caracteres."></textarea>
+            <br>
+            <br>
+
+            <label for="cargo">Cargo exercido:</label>
+            <input type="text" name="cargo" id="cargo" required placeholder="Digite aqui o cargo." maxlength="40">
+            <br>
+            <br>
+
+            <label for="descricao-cargo">Descrição do cargo:</label>
+            <br>
+            <textarea name="descricao-cargo" id="descricao-cargo" cols="30" rows="10" maxlength="500" 
+            required placeholder="Digite aqui uma descrição para seu último cargo com no máximo 500 caracteres."></textarea>
+            <br>
+            <br>
+
+            <label for="data-inicio">Data de início no último emprego:</label>
+            <input type="text" name="data-inicio" id="data-inicio" class="input-data" required placeholder="dd/mm/aaaa">
+        </fieldset>
+        <button type="submit" id="submit-button">Enviar</button>
+
+        <div class="form_infos"></div>
 </body>
 </html>
