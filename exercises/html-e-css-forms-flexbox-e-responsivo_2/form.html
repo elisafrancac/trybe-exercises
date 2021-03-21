@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <link href="validation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Currículo</h1>
+        <h3 class="subtitle">Preencha os dados para obter seu currículo pronto</h3>
+    </header>
+    <form action="" method="get" class="form">
+        <fieldset class="div-fieldset input-elements field">
+            <legend class="legend">Dados pessoais</legend>
+
+            <label for="name" class="input-elements label">Nome:</label>
+            <input type="text" name="name" id="name" data-validate="required" maxlength="40" placeholder="Digite seu nome" class="input-elements input validate">
+            <br>
+            <br>
+
+            <label for="email" class="label">E-mail:</label>
+            <input type="text" name="email" id="email" data-validate="required,email" maxlength="50" placeholder="Digite seu e-mail" class="input-elements input validate">
+            <br>
+            <br>
+
+            <label for="cpf" class="label">CPF:</label>
+            <input type="text" name="cpf" id="cpf" maxlength="11" placeholder="Digite seu CPF" class="input-elements input validate" data-validate="required">
+            <br>
+            <br>
+
+            <label for="endereco" class="label">Endereço:</label>
+            <input type="text" name="endereco" id="endereco" maxlength="200" placeholder="Digite seu endereço" class="input-elements input validate" data-validate="required">
+            <br>
+            <br>
+
+            <label for="cidade" class="label">Cidade:</label>
+            <input type="text" name="cidade" id="cidade" maxlength="28" placeholder="Digite sua cidade" class="input-elements input validate" data-validate="required">
+            <br>
+            <br>
+
+            <label for="estado" class="label">Estado</label>
+            <select name="estado" id="estado" class="select validate" data-validate="required">
+               
+            </select>
+            <br>
+            <br>
+
+            <label for="tipo-moradia1" class="label">Tipo de moradia: <br>
+                <input type="radio" name="tipo-moradia" id="tipo-moradia1" value="casa" class="radio validate" data-validate="required">Casa
+            </label>
+            <label for="tipo-moradia2" class="label">
+                <input type="radio" name="tipo-moradia" id="tipo-moradia2" value="apartamento" class="radio validate" data-validate="required">Apartamento
+            </label>   
+            <br>
+        </fieldset>
+        <fieldset class="div-fieldset input-elements field">
+            <legend class="legend">Dados do último emprego</legend>
+
+            <label for="resumo-curriculo" class="label">Resumo do currículo:</label>
+            <br>
+            <textarea name="resumo-curriculo" id="resumo-curriculo" cols="30" rows="10" maxlength="1000" 
+             placeholder="Digite aqui um resumo para seu currículo com no máximo 1000 caracteres." class="textarea validate" data-validate="required"></textarea>
+            <br>
+            <br>
+
+            <label for="cargo" class="label">Cargo exercido:</label>
+            <input type="text" name="cargo" id="cargo" placeholder="Digite aqui o cargo." maxlength="40" class="input validate" data-validate="required">
+            <br>
+            <br>
+
+            <label for="descricao-cargo" class="label">Descrição do cargo:</label>
+            <br>
+            <textarea name="descricao-cargo" id="descricao-cargo" cols="30" rows="10" maxlength="500" 
+            required placeholder="Digite aqui uma descrição para seu último cargo com no máximo 500 caracteres." class="textarea validate" data-validate="required"></textarea>
+            <br>
+            <br>
+
+            <label for="datepicker" class="label">Data de início no último emprego:</label>
+            <input type="text" name="data-inicio" id="datepicker" class="input-data input validate" data-validate="required" placeholder="dd/mm/aaaa" autocomplete="off">
+        </fieldset>
+        
+        <button type="submit" id="submit-button" class="button is-primary">Enviar</button>
+        <button type="reset" id="clear-button" class="button">Limpar</button>
+        
+        <div class="form_infos"></div>
+    </form> 
+<script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker') });
+</script>
+<script>
+    validation.init(".form");
+</script>
+</body>
+</html>
