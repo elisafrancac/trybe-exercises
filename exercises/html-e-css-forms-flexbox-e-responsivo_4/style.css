@@ -20,11 +20,13 @@
     display: flex;
     justify-content: center;
     flex-basis:  268px;
+    order: 0;
   }
 
   .menu-container {
     display: flex;
-    flex-basis: 500px;
+    flex-basis: 768px;
+    flex-grow: 1;
   }
   
   .menu-container ul {
