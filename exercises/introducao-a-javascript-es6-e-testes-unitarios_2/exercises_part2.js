@@ -19,5 +19,8 @@ const lesson1 = {
   };
 
   const insertShift = (object, newKey, newValue) => {object[newKey] = newValue; return object;}
-
   console.log(insertShift(lesson2, 'turno', 'manhã'));
+
+  const listKeys = (object) => { return Object.keys(object);}
+  console.log(listKeys(lesson1));
+  
