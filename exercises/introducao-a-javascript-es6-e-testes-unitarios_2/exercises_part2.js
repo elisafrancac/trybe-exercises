@@ -18,14 +18,17 @@ const lesson1 = {
     turno: 'noite',
   };
 
-  const insertShift = (object, newKey, newValue) => {object[newKey] = newValue; return object;}
-  console.log(insertShift(lesson2, 'turno', 'manhã'));
+const insertShift = (object, newKey, newValue) => {object[newKey] = newValue; return object;}
+ console.log(insertShift(lesson2, 'turno', 'manhã'));
 
-  const listKeys = (object) => { return Object.keys(object);}
-  console.log(listKeys(lesson1));
+ const listKeys = (object) => { return Object.keys(object);}
+ console.log(listKeys(lesson1));
 
- const objectSize = (object) => { return Object.keys(object).length }
+const objectSize = (object) => { return Object.keys(object).length }
  console.log(objectSize(lesson3));
 
- const listValues = (object) => { return Object.values(object);}
+const listValues = (object) => { return Object.values(object);}
 console.log(listValues(lesson1));
+
+const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
+console.log(allLessons);
