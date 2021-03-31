@@ -19,22 +19,23 @@ const lesson3 = {
 };
 
 const insertShift = (object, newKey, newValue) => {object[newKey] = newValue; return object;}
-//  console.log(insertShift(lesson2, 'turno', 'manhã'));
+console.log(insertShift(lesson2, 'turno', 'manhã'));
 
- const listKeys = (object) => { return Object.keys(object);}
-//  console.log(listKeys(lesson1));
+const listKeys = (object) => { return Object.keys(object);}
+console.log(listKeys(lesson1));
 
 const objectSize = (object) => { return Object.keys(object).length }
-//  console.log(objectSize(lesson3));
+console.log(objectSize(lesson3));
 
 const listValues = (object) => { return Object.values(object);}
-// console.log(listValues(lesson1));
+console.log(listValues(lesson1));
 
 const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
-// console.log(allLessons);
+console.log(allLessons);
+
+const lessons = Object.keys(allLessons);
 
 const allStudents = () => {
-  const lessons = Object.keys(allLessons);
   let studentsNumber = 0;
   lessons.forEach((lessonKey) => {
     const lessonItem = allLessons[lessonKey];
@@ -43,3 +44,9 @@ const allStudents = () => {
   return studentsNumber;
 }
 console.log(allStudents());
+
+const getKeyValue = (object, position) => {
+  const objectKey = Object.keys(object);
+  return object[objectKey[position]];
+}
+console.log(getKeyValue(lesson1, 0));
