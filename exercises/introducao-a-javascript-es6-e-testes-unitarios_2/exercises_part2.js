@@ -46,8 +46,8 @@ const allStudents = () => {
 console.log(allStudents());
 
 const getKeyValue = (object, position) => {
-  const objectKey = Object.keys(object);
-  return object[objectKey[position]];
+  const objectKeys = Object.keys(object);
+  return object[objectKeys[position]];
 }
 console.log(getKeyValue(lesson1, 0));
 
@@ -60,3 +60,17 @@ const verifyPair = (object, key, value) => {
   }
 }
 console.log(verifyPair(lesson1, 'materia', 'Matemática'));
+
+// Exercício Bônus
+
+const mathStudents = (subject) => {
+  let mathStudentsNumber = 0;
+  lessons.forEach((lessonKey) => {
+    const lessonItem = allLessons[lessonKey];
+    if (lessonItem.materia == subject) {
+      mathStudentsNumber += lessonItem.numeroEstudantes;
+    }
+  });
+  return mathStudentsNumber;
+}
+console.log(mathStudents('Matemática'));
