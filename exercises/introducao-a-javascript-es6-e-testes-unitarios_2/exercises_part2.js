@@ -50,3 +50,13 @@ const getKeyValue = (object, position) => {
   return object[objectKey[position]];
 }
 console.log(getKeyValue(lesson1, 0));
+
+const verifyPair = (object, key, value) => {
+  if (Object.keys(object).includes(key) && Object.values(object).includes(value)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(verifyPair(lesson1, 'materia', 'Matemática'));
