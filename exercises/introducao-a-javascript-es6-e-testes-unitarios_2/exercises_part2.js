@@ -61,7 +61,7 @@ const verifyPair = (object, key, value) => {
 }
 console.log(verifyPair(lesson1, 'materia', 'Matemática'));
 
-// Exercício Bônus
+// Exercício Bônus: 1
 
 const mathStudents = (subject) => {
   let mathStudentsNumber = 0;
@@ -74,3 +74,27 @@ const mathStudents = (subject) => {
   return mathStudentsNumber;
 }
 console.log(mathStudents('Matemática'));
+
+// Exercício Bônus: 2
+// Contei com o auxílio do Gabarito
+
+const getInfo = (object, name) => {
+  const allLessons = [];
+  let allStudent = 0;
+  const array = Object.values(object);
+  for (index in array) {
+    if (array[index].professor === name) {
+      allLessons.push(array[index].materia)
+      allStudent += array[index].numeroEstudantes;
+    }
+  }
+  return { lessons: allLessons, estudantes: allStudent };
+}
+
+const createReport = (allLessons, name) => {
+  const report = {};
+  report.professor = name;
+  Object.assign(report, getInfo(allLessons, name));
+  return report;
+}
+console.log(createReport(allLessons, 'Maria Clara'));
