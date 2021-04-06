@@ -1,6 +1,6 @@
 const assert = require('assert');
 const addOne = (arr) => {
-    newArray = [];
+    let newArray = [];
     arr.forEach(element => {
         element += 1;
         newArray.push(element);
