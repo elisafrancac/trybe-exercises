@@ -5,13 +5,13 @@ import userEvent from '@testing-library/user-event';
 
 describe('Teste da aplicação toda', () => {
 
-  test('exibe texto de pesquisa', async () => {
+  test('exibe texto de pesquisa', () => {
     const { getByText } = render(<App />);
     const linkElement = getByText(/Faça uma pesquisa/i);
     expect(linkElement).toBeInTheDocument();
   });
 
-  test('exibe input e botão de pesquisa', async () => {
+  test('exibe input e botão de pesquisa', () => {
     const { getByTestId } = render(<App />);
     const input = getByTestId("input");
     const button = getByTestId("buttonSearch");
