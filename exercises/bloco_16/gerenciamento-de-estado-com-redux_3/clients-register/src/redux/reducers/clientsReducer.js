@@ -1,4 +1,4 @@
-import { ADD_CLIENT } from '../actions/index';
+import { ADD_CLIENT, REMOVE_CLIENT } from '../actions/index';
 
 const INITIAL_STATE = {
   clients: [],
@@ -9,7 +9,11 @@ const clientsReducer = (state = INITIAL_STATE, action) => {
     case ADD_CLIENT :
       return {
         clients: state.clients.concat(action.payload.client),
-      } 
+      }
+    case REMOVE_CLIENT :
+      return {
+        clients: state.clients.filter((eachClient) => eachClient !== action.client),
+      };
     default :
       return state;
   }

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
+import { removeClient } from '../redux/actions';
 
 class Clients extends Component {
 
   render() {
 
-    const { users, clients } = this.props;
+    const { users, clients, removeClient } = this.props;
     if (users.length === 0) {
       return (
         <div>
@@ -28,6 +29,7 @@ class Clients extends Component {
           {clients.map((client) => (
             <li key={ client.eMail }>
               { client.name }
+              <button onClick={ () => removeClient(client) }>X</button>
             </li>
           ))}
         </ul>
@@ -42,4 +44,8 @@ const mapStateToProps = (state) => ({
   users: state.loginsReducer.users,
 });
 
-export default connect(mapStateToProps, null)(Clients);
+const mapDispatchToProps = (dispatch) => ({
+  removeClient: (client) => dispatch(removeClient(client)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clients);
