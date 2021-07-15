@@ -28,7 +28,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 3-2: _HTML & CSS - Primeiros passos em CSS_
 - [X] 3-3: _HTML & CSS - Seletores e posicionamento_
 - [x] 3-4: _HTML Semântico_
-- [x] 3-5: _[Projeto - HTML & CSS]()_
+- [x] 3-5: _[Projeto - Lessons Learned](https://github.com/tryber/sd-010-a-project-lessons-learned/tree/elisafrancac-lessons-learned-project)_
 
 ##### Bloco 4: Introdução - JavaScript
 
@@ -36,7 +36,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 4-2: _JavaScript - Array e loop For_
 - [x] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [x] 4-4: _JavaScript - Objetos e funções_
-- [x] 4-5: _[Projeto - Playground Functions]()_
+- [x] 4-5: _[Projeto - Playground Functions](https://github.com/tryber/sd-010-a-project-playground-functions/tree/elisafrancac-project-playground-functions)_
 
 ##### Bloco 5: Introdução - JavaScript - Projetos
 
@@ -93,7 +93,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [x] 11-1: _'Hello, world!' no React!_
 - [x] 11-2: _Componentes React_
-- [x] 11-3: _[Projeto - Movie Cards Library]()_
+- [x] 11-3: _Projeto - Movie Cards Library_
 
 ##### Bloco 12: React
 
