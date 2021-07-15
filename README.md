@@ -9,7 +9,7 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
 
 ## Fundamentos doDesenvolvimento Web :computer:
-📑
+
 ##### Bloco 1: Introdução - Unix & Shell
 
 - [X] 1-3: _Unix & Bash - Part 1_
@@ -87,7 +87,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 10-3: _Jest - Simulando comportamentos_
 - [x] 10-4: _[Projeto - Jest Assíncrono e Mocking](https://github.com/tryber/sd-010-a-project-jest/tree/elisafrancac-project-jest)_
 
-## Desenvolvimento Front-end :hourglass_flowing_sand:
+## Desenvolvimento Front-end:
 
 ##### Bloco 11: Introdução - React
 
