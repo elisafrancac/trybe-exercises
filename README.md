@@ -8,8 +8,8 @@ _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vi
 
 O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais.
 
-## Fundamentos doDesenvolvimento Web :
-
+## Fundamentos doDesenvolvimento Web :computer:
+📑
 ##### Bloco 1: Introdução - Unix & Shell
 
 - [X] 1-3: _Unix & Bash - Part 1_
@@ -44,11 +44,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 5-2: _JavaScript - Trabalhando com elementos_
 - [x] 5-3: _JavaScript - Eventos_
 - [x] 5-4: _JavaScript - Web Storage_
-- [ ] 5-5: _[Projeto - Meme Generator]()_
+- [ ] 5-5: _Projeto - Meme Generator_
 - [x] 5-6: _[Projeto - Arte com Pixels](https://github.com/tryber/sd-010-a-project-pixels-art/tree/elisafrancac-project-pixels-art)_
 - [x] 5-7: _[Projeto - Lista de tarefas](https://github.com/tryber/sd-010-a-project-todo-list/tree/elisafrancac-todo-list-project)_
-- [ ] 5-7: _[Projeto - Adivinhe a Cor]()_
-- [ ] 5-7: _[Projeto - Carta Misteriosa]()_
+- [ ] 5-7: _Projeto - Adivinhe a Cor_
+- [ ] 5-7: _Projeto - Carta Misteriosa_
 
 ##### Bloco 6: HTML & CSS avançado
 
@@ -57,14 +57,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 6-3: _CSS Flexbox - Part 1_
 - [x] 6-4: _CSS Flexbox - Part 2_
 - [x] 6-5: _CSS Responsivo - Mobile First_
-- [x] 6-6: _[Projeto - PÃ¡gina inicial do Facebook]()_
+- [x] 6-6: _[Projeto - Página inicial do Facebook](https://github.com/tryber/sd-010-a-project-facebook-signup/tree/elisafrancac-facebook-project)_
 
 ##### Bloco 7: JavaScript ES6 & Testes Unitários
 
 - [x] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
 - [x] 7-2: _JavaScript ES6 - Objects_
 - [x] 7-3: _Testes unitários em JavaScript_
-- [x] 7-4: _[Projeto - JavaScript Testes UnitÃ¡rios]()_
+- [x] 7-4: _[Projeto - JavaScript Testes Unitários](https://github.com/tryber/sd-010-a-project-js-unit-tests/tree/elisafrancac-js-unit-tests)_
 
 ##### Bloco 8: JavaScript ES6
 
@@ -72,20 +72,20 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 8-2: _JavaScript ES6 - Higher Order Functions - map e filter_
 - [x] 8-3: _JavaScript ES6 - Higher Order Functions - reduce_
 - [x] 8-4: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
-- [x] 8-5: _[Projeto - Zoo functions]()_
+- [x] 8-5: _[Projeto - Zoo functions](https://github.com/tryber/sd-010-a-project-zoo-functions/tree/elisafrancac-zoo-functions-project)_
 
 ##### Bloco 9: Assincronicidade & Callbacks
 
 - [x] 9-1: _JavaScript Assíncrono e Callbacks_
 - [x] 9-2: _JavaScript Promises_
-- [x] 9-3: _[Projeto - Carrinho de Compras]()_
+- [x] 9-3: _[Projeto - Carrinho de Compras](https://github.com/tryber/sd-010-a-project-shopping-cart/tree/elisafrancac-project-shopping-cart)_
 
 ##### Bloco 10: Jest
 
 - [x] 10-1: _Primeiros passos no Jest_
 - [x] 10-2: _Jest - Testes Assíncronos_
 - [x] 10-3: _Jest - Simulando comportamentos_
-- [x] 10-4: _[Projeto - Jest Assíncrono e Mocking]()_
+- [x] 10-4: _[Projeto - Jest Assíncrono e Mocking](https://github.com/tryber/sd-010-a-project-jest/tree/elisafrancac-project-jest)_
 
 ## Desenvolvimento Front-end :hourglass_flowing_sand:
 
@@ -99,25 +99,25 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [x] 12-1: _Components com estado_
 - [x] 12-2: _Eventos e formulários no React_
-- [x] 12-3: _[Projeto - Movie Cards Library Stateful]()_
+- [x] 12-3: _[Projeto - Movie Cards Library Stateful](https://github.com/tryber/sd-010-a-project-movie-cards-library-stateful/tree/elisafrancac-movie-cards-library-stateful)_
 
 ##### Bloco 13: React
 
 - [x] 13-1: _Melhorando o reuso de componentes: props.children e PropTypes_
 - [x] 13-2: _Ciclo de vida de componentes em React_
 - [x] 13-3: _React Router_
-- [x] 13-4: _[Projeto - Movie Cards Library CRUD]()_
+- [x] 13-4: _[Projeto - Movie Cards Library CRUD](https://github.com/tryber/sd-010-a-project-movie-card-library-crud/tree/elisafrancac-project-movie-card-library-crud)_
 
 ##### Bloco 14: Metodologias Ágeis
 
 - [x] 14-1: _Metodologias Ágeis_
-- [x] 14-2: _[Projeto - Frontend Online Store]()_
+- [x] 14-2: _[Projeto - Frontend Online Store](https://github.com/tryber/sd-010-a-project-frontend-online-store/tree/main-group-3)_
 
 ##### Bloco 15: Testes em React
 
 - [x] 15-1: _Testando React com a React Testing Library_
 - [x] 15-2: _Testando React com a React Testing Library - Parte 2_
-- [x] 15-3: _[Projeto - Testes em React]()_
+- [x] 15-3: _[Projeto - Testes em React](https://github.com/tryber/sd-010-a-project-react-testing-library/tree/elisafrancac-react-testing-library)_
 
 ##### Bloco 16: Introdução ao Redux
 
@@ -126,18 +126,18 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 16-3: _React com Redux - Prática_
 - [x] 16-4: _React com Redux - Parte 2_
 - [x] 16-5: _Testes assíncronos com React-Redux_
-- [x] 16-6: _[Projeto - Tabela com filtros de dados]()_
+- [x] 16-6: _[Projeto - Trybe Wallet](https://github.com/tryber/sd-010-a-project-trybewallet/pull/62)_
 
 ##### Bloco 17: Projeto React
 
-- [x] 17-1: _[Projeto - Jogo de Trivia]()_
+- [x] 17-1: _[Projeto - Jogo de Trivia](https://github.com/tryber/sd-010-a-project-trivia-react-redux/tree/main-group-5)_
 
 ##### Bloco 18: React & Context API
 
 - [x] 18-1: _Context API do React_
 - [x] 18-2: _React Hooks - useState e useContext_
 - [x] 18-3: _React Hooks - useEffect e Hooks customizados_
-- [x] 18-4: _[Projeto - StarWars Datatable com Context API e Hooks]()_
+- [x] 18-4: _[Projeto - StarWars Datatable com Context API e Hooks](https://github.com/tryber/sd-010-a-project-starwars-planets-search/tree/elisafrancac-starwars-planets-search)_
 
 ##### Bloco 19: Projeto Final de Front-end
 
