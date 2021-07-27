@@ -12,3 +12,5 @@ BEGIN
 	INSERT INTO movies_logs(movie_id, executed_action, delete_date)
 		VALUES(OLD.movie_id, 'DELETE', NOW());
 END $$
+
+DELIMITER ;
