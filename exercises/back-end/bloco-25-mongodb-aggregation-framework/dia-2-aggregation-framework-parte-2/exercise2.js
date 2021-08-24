@@ -19,14 +19,6 @@ db.clientes.aggregate([
     }
   },
   {
-    $group: {
-      _id: "$clientId",
-      clients: { $sum: 1 },
-    }
+    $count: 'clients'
   },
-  {
-    $project: {
-      _id: 0,
-    }
-  }
 ]);
