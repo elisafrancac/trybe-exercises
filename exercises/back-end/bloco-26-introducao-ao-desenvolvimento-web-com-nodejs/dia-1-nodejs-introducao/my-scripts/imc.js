@@ -8,8 +8,9 @@
 // Armazene o script no arquivo imc.js .
 const weight = 70;
 const height = 159;
-const findImc = (weight, height) => {
+const findImc = () => {
   console.log(`Peso: ${weight}, Altura: ${height}`);
-  const result = (weight / Math.pow(height / 100, 2).toFixed(2));
+  const result = Math.round((weight / Math.pow(height / 100, 2).toFixed(2)));
   console.log('O IMC é: ' + result) ;
 }
+findImc();
