@@ -14,3 +14,6 @@ const findImc = () => {
   console.log('O IMC é: ' + result) ;
 }
 findImc();
+
+    // Agora, permita que o script seja executado através do comando npm run imc
+    // O novo script criado deve conter o comando que chama o node para executar o arquivo imc.js .
