@@ -7,7 +7,10 @@
 // Por enquanto, não se preocupe em pedir input da pessoa usuária. Utilize valores fixos para peso e altura .
 // Armazene o script no arquivo imc.js .
 const readline = require('readline-sync');
-const weight = readline.questionInt('Qual seu peso? ');
+// Agora temos um problema: peso não é um número inteiro! Isso quer dizer que precisamos mudar um pouco a forma como solicitamos o input desse dado.
+// O pacote readline-sync possui uma função específica para tratar esses casos. Consulte a documentação do pacote e encontre o método adequado para realizar input de floats .
+// Encontrou a função? Show! Agora utilize-a para solicitar o input de peso .
+const weight = readline.questionFloat('Qual seu peso? ');
 const height = readline.questionInt('Qual sua altura? ');
 const findImc = () => {
   console.log(`Peso: ${weight}, Altura: ${height}`);
