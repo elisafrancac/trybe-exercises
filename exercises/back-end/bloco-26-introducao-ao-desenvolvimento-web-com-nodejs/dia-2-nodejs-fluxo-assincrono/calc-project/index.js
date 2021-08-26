@@ -30,12 +30,19 @@ const calc = (a, b, c) => {
   // Caso a Promise seja resolvida, escreva na tela o resultado do cálculo.
   const randomNumber = () => Math.random() * 100 + 1;
 
-  const randomCalc = () => {
+  const randomCalc = async () => {
     const numbA = randomNumber();
     const numbB = randomNumber();
     const numbC = randomNumber();
-    calc(numbA, numbB, numbC)
-  .then(resolve => console.log(resolve))
-  .catch(reject => console.log(reject));
+    try {
+      console.log(await calc(numbA, numbB, numbC));
+    }
+    catch(err) {
+      console.log(err)
+    }
   }
 randomCalc();
+
+// Reescreva o código do exercício anterior para que utilize async/await .
+// Lembre-se: a palavra chave await só pode ser utilizada dentro de funções async .
+
