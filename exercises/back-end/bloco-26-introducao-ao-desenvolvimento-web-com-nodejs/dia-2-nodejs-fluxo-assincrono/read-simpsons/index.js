@@ -6,16 +6,16 @@
 // exemplo: 1 - Homer Simpson .
 const fs = require('fs').promises;
 
-fs.readFile('./simpsons.json', 'utf-8')
-  .then((fileContent) => {
-    return JSON.parse(fileContent);
-  })
-  .then((simpsonsArray) => {
-    return simpsonsArray.map(({ id, name }) => `${id} - ${name}`);
-  })
-  .then((result) => {
-    return result.forEach((eachResult) => console.log(eachResult));
-  });
+// fs.readFile('./simpsons.json', 'utf-8')
+//   .then((fileContent) => {
+//     return JSON.parse(fileContent);
+//   })
+//   .then((simpsonsArray) => {
+//     return simpsonsArray.map(({ id, name }) => `${id} - ${name}`);
+//   })
+//   .then((result) => {
+//     return result.forEach((eachResult) => console.log(eachResult));
+//   });
 
 // Crie uma função que receba o id de uma personagem como parâmetro e retorne uma Promise que é resolvida 
 // com os dados da personagem que possui o id informado. Caso não haja uma personagem com o id informado, rejeite 
@@ -41,13 +41,24 @@ fs.readFile('./simpsons.json', 'utf-8')
 // newSimpsons();
 // Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json , 
 // contendo as personagens com id de 1 a 4.
-const createSimpsonsFamily = async () => {
-  const file = await fs.readFile('./simpsons.json', 'utf-8');
-  const fileContent = JSON.parse(file);
-  const filteredSimpsons = fileContent.filter(simpson => ['1', '2', '3', '4'].includes(simpson.id));
-  fs.writeFile('./simpsonsFamily.json', JSON.stringify(filteredSimpsons));
-}
-createSimpsonsFamily();
+
+// const createSimpsonsFamily = async () => {
+//   const file = await fs.readFile('./simpsons.json', 'utf-8');
+//   const fileContent = JSON.parse(file);
+//   const filteredSimpsons = fileContent.filter(simpson => ['1', '2', '3', '4'].includes(simpson.id));
+//   fs.writeFile('./simpsonsFamily.json', JSON.stringify(filteredSimpsons));
+// }
+// createSimpsonsFamily();
 // Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz .
+const addNelson = async () => {
+  const simpsonsFile = await fs.readFile('./simpsons.json', 'utf-8');
+  const simpsonsFileContent = JSON.parse(simpsonsFile);
+  const nelson = simpsonsFileContent.find(simpson => simpson.name == 'Nelson Muntz');
+  const simpsonsFamilyFile = await fs.readFile('./simpsonsFamily.json', 'utf-8');
+  const simpsonsFamilyContent = JSON.parse(simpsonsFamilyFile);
+  simpsonsFamilyContent.push(nelson);
+  fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamilyContent));
+}
+addNelson();
 // Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo 
 // simpsonFamily.json .
