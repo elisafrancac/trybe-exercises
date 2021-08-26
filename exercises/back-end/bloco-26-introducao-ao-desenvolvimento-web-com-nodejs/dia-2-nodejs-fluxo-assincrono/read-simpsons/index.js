@@ -20,6 +20,15 @@ fs.readFile('./simpsons.json', 'utf-8')
 // Crie uma função que receba o id de uma personagem como parâmetro e retorne uma Promise que é resolvida 
 // com os dados da personagem que possui o id informado. Caso não haja uma personagem com o id informado, rejeite 
 // a Promise com o motivo "id não encontrado".
+const simpsonById = async (id) => {
+  const file = await fs.readFile('./simpsons.json', 'utf-8');
+  const fileContent = await JSON.parse(file);
+  const getSimpson = fileContent.find((simpson) => simpson.id == id);
+  if (!getSimpson) throw new Error('id não encontrado');
+  else return console.log(getSimpson);
+};
+simpsonById(11);
+
 // Crie uma função que altere o arquivo simpsons.json retirando os personagens com id 10 e 6.
 // Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json , 
 // contendo as personagens com id de 1 a 4.
