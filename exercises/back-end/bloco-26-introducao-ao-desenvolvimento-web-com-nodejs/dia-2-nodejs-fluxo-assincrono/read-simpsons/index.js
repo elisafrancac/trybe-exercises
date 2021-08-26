@@ -50,15 +50,25 @@ const fs = require('fs').promises;
 // }
 // createSimpsonsFamily();
 // Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz .
-const addNelson = async () => {
-  const simpsonsFile = await fs.readFile('./simpsons.json', 'utf-8');
-  const simpsonsFileContent = JSON.parse(simpsonsFile);
-  const nelson = simpsonsFileContent.find(simpson => simpson.name == 'Nelson Muntz');
-  const simpsonsFamilyFile = await fs.readFile('./simpsonsFamily.json', 'utf-8');
-  const simpsonsFamilyContent = JSON.parse(simpsonsFamilyFile);
-  simpsonsFamilyContent.push(nelson);
-  fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamilyContent));
-}
-addNelson();
+// const addNelson = async () => {
+//   const simpsonsFile = await fs.readFile('./simpsons.json', 'utf-8');
+//   const simpsonsFileContent = JSON.parse(simpsonsFile);
+//   const nelson = simpsonsFileContent.find(simpson => simpson.name == 'Nelson Muntz');
+//   const simpsonsFamilyFile = await fs.readFile('./simpsonsFamily.json', 'utf-8');
+//   const simpsonsFamilyContent = JSON.parse(simpsonsFamilyFile);
+//   simpsonsFamilyContent.push(nelson);
+//   fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamilyContent));
+// }
+// addNelson();
 // Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo 
 // simpsonFamily.json .
+const replaceNelson = async () => {
+  const simpsonsFile = await fs.readFile('./simpsons.json', 'utf-8');
+  const simpsonsFileContent = JSON.parse(simpsonsFile);
+  const maggie = simpsonsFileContent.find(simpson => simpson.name == 'Maggie Simpson');
+  const simpsonsFamilyFile = await fs.readFile('./simpsonsFamily.json', 'utf-8');
+  const simpsonsFamilyContent = JSON.parse(simpsonsFamilyFile);
+  simpsonsFamilyContent.splice(-1, 1, maggie);
+  fs.writeFile('./simpsonsFamily.json', JSON.stringify(simpsonsFamilyContent));
+};
+replaceNelson();
