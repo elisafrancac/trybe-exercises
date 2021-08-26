@@ -20,18 +20,34 @@ fs.readFile('./simpsons.json', 'utf-8')
 // Crie uma função que receba o id de uma personagem como parâmetro e retorne uma Promise que é resolvida 
 // com os dados da personagem que possui o id informado. Caso não haja uma personagem com o id informado, rejeite 
 // a Promise com o motivo "id não encontrado".
-const simpsonById = async (id) => {
-  const file = await fs.readFile('./simpsons.json', 'utf-8');
-  const fileContent = await JSON.parse(file);
-  const getSimpson = fileContent.find((simpson) => simpson.id == id);
-  if (!getSimpson) throw new Error('id não encontrado');
-  else return console.log(getSimpson);
-};
-simpsonById(11);
+
+// const simpsonById = async (id) => {
+//   const file = await fs.readFile('./simpsons.json', 'utf-8');
+//   const fileContent = await JSON.parse(file);
+//   const getSimpson = fileContent.find((simpson) => simpson.id == id);
+//   if (!getSimpson) throw new Error('id não encontrado');
+//   else return console.log(getSimpson);
+// };
+// simpsonById(2);
 
 // Crie uma função que altere o arquivo simpsons.json retirando os personagens com id 10 e 6.
+
+// const newSimpsons = async () => {
+//   const file = await fs.readFile('./simpsons.json', 'utf-8');
+//   const fileContent = await JSON.parse(file);
+//   const filteredSimpsons = fileContent.filter(simpson => simpson.id !== '10' && simpson.id !== '6');
+//   await fs.writeFile('./simpsons.json', JSON.stringify(filteredSimpsons));
+// };
+// newSimpsons();
 // Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json , 
 // contendo as personagens com id de 1 a 4.
+const createSimpsonsFamily = async () => {
+  const file = await fs.readFile('./simpsons.json', 'utf-8');
+  const fileContent = JSON.parse(file);
+  const filteredSimpsons = fileContent.filter(simpson => ['1', '2', '3', '4'].includes(simpson.id));
+  fs.writeFile('./simpsonsFamily.json', JSON.stringify(filteredSimpsons));
+}
+createSimpsonsFamily();
 // Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz .
 // Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo 
 // simpsonFamily.json .
