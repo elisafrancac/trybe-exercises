@@ -11,6 +11,12 @@
 
 const express = require('express');
 
+const {
+  validatePassword,
+  validateEmail,
+  validateUsername
+} = require('./middlewares/validations');
+
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -18,34 +24,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const users = [];
-
-const errorMessage = { message: 'Invalid data!'};
-
-const validatePassword = (req, res, next) => {
-  const { password } = req.body;
-
-  if (password.length <= 4 || password.length >= 9) res.status(400).json(errorMessage);
-
-  next();
-};
-
-const validateUsername = (req, res, next) => {
-  const { username } = req.body;
-
-  if (username.length <= 3) res.status(400).json(errorMessage);
-
-  next();
-};
-
-const validateEmail = (req, res, next) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const { email } = req.body;
-
-  if (!email.match(regex)) res.status(400).json(errorMessage);
-
-  next();
-};
 
 const validations = [validateEmail, validateUsername, validatePassword];
 
@@ -56,6 +34,24 @@ app.post('/user/register', validations, (req, res) => {
 
   res.status(201).json({ message: 'user created'});
 
+});
+// Crie uma rota POST /user/login que receba uma requisição que envie email / password no body da requisição e 
+// devolva um token como resposta, onde:
+// O formato desse token retornado deve ser uma string aleatória com 12 caracteres;
+// O email recebido deve ter o formato email@mail.com;
+// O password deve conter no mínimo 4 caracteres e no máximo 8, todos números;
+// Para todos os casos não atendidos acima deve ser retornado o código de status e um JSON com uma mensagem de erro, 
+// ex: status 400 e { "message": "email or password is incorrect" }
+// Caso tenha sucesso deve ser retornado uma resposta com o código de status e um JSON com uma mensagem de sucesso, 
+// ex: status 200 e { "token": "86567349784e" } ;
+
+app.post('/user/login', validatePassword, validateEmail, (req, res) => {
+  const bodyKeys = Object.keys(req.body);
+
+  if(bodyKeys.length === 2) {
+    const token = Math.random().toString(36).substr(2, 12).concat('t');
+    res.status(201).json({ message: token });
+  }
 });
 
 app.listen(3000, () => console.log('Porta 3000'));
