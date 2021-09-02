@@ -2,22 +2,21 @@ const errorMessage = { message: 'Invalid data!'};
 const errorMessage2 = { message: 'email or password is incorrect' }
 
 const validatePassword = (req, res, next) => {
-  console.log(req.body);
-  const { password } = req.body;
+  const { password, username } = req.body;
   const passwordRegex = /^[0-9]*$/;
   const keys = Object.keys(req.body);
 
   if (password.length <= 4 
     || password.length >= 9 
     || !password.match(passwordRegex)
-    && keys.includes('username')) {
-      return res.status(400).json(errorMessage);
+    || !keys.includes('username')) {
+      return res.status(400).json(errorMessage2);
   }
   
   if (password.length <= 4 
     || password.length >= 9 
     || !password.match(passwordRegex)) {
-      return res.status(400).json(errorMessage2);
+      return res.status(400).json(errorMessage);
   }
 
   next();
