@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://app.slack.com/pdf-viewer -->
+<html lang="pt-BR" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="referrer" content="no-referrer"><meta name="superfish" content="nofish"><title>Visualizador de PDF do Slack</title><script>
+(function () {
+	function throttle(callback, intervalMs) {
+		var wait = false;
+
+		return function () {
+			if (!wait) {
+				callback.apply(null, arguments);
+				wait = true;
+				setTimeout(function () {
+					wait = false;
+				}, intervalMs);
+			}
+		};
+	}
+
+	function getGenericLogger() {
+		return {
+			warn: (msg) => {
+				
+				if (window.console && console.warn) return console.warn(msg);
+			},
+			error: (msg) => {
+				if (!msg) return;
+
+				if (window.TSBeacon) return window.TSBeacon(msg, 1);
+
+				
+				if (window.console && console.warn) return console.warn(msg);
+			},
+		};
+	}
+
+	function globalErrorHandler(evt) {
+		if (!evt) return;
+
+		
+		var details = '';
+
+		var node = evt.srcElement || evt.target;
+
+		var genericLogger = getGenericLogger();
+
+		
+		
+		
+		
+		if (node && node.nodeName) {
+			var nodeSrc = '';
+			if (node.nodeName === 'SCRIPT') {
+				nodeSrc = node.src || 'unknown';
+				var errorType = evt.type || 'error';
+
+				
+				details = `[${errorType}] from script at ${nodeSrc} (failed to load?)`;
+			} else if (node.nodeName === 'IMG') {
+				nodeSrc = node.src || node.currentSrc;
+
+				genericLogger.warn(`<img> fired error with url = ${nodeSrc}`);
+				return;
+			}
+		}
+
+		
+		if (evt.error && evt.error.stack) {
+			details += ` ${evt.error.stack}`;
+		}
+
+		if (evt.filename) {
+			
+			var fileName = evt.filename;
+			var lineNo = evt.lineno;
+			var colNo = evt.colno;
+
+			details += ` from ${fileName}`;
+
+			
+			if (lineNo) {
+				details += ` @ line ${lineNo}, col ${colNo}`;
+			}
+		}
+
+		var msg;
+
+		
+		if (evt.error && evt.error.stack) {
+			
+			msg = details;
+		} else {
+			
+			msg = `${evt.message || ''} ${details}`;
+		}
+
+		
+		if (msg && msg.replace) msg = msg.replace(/\s+/g, ' ').trim();
+
+		if (!msg || !msg.length) {
+			if (node) {
+				var nodeName = node.nodeName || 'unknown';
+
+				
+				
+				
+				if (nodeName === 'VIDEO') {
+					return;
+				}
+
+				msg = `error event from node of ${nodeName}, no message provided?`;
+			} else {
+				msg = 'error event fired, no relevant message or node found';
+			}
+		}
+
+		var logPrefix = 'ERROR caught in js/inline/register_global_error_handler';
+
+		msg = `${logPrefix} - ${msg}`;
+
+		genericLogger.error(msg);
+	}
+
+	
+	
+	
+	var capture = true;
+
+	
+	var throttledHandler = throttle(globalErrorHandler, 10000);
+
+	window.addEventListener('error', throttledHandler, capture);
+})();
+</script><script type="text/javascript">
+var boot_data = {
+	worker_file: "https:\/\/a.slack-edge.com\/bv1-9\/rollup-pdf_worker.5c7343e330d6fd9b08cf.min.js",
+	server_name: "slack.com",
+	env: "prod"
+};
+</script><link href="./rollup-pdf_viewer.300b3a07c217954d18e5253695a34cfd1def5a7b.css" rel="stylesheet" type="text/css" onload="window._cdn ? _cdn.ok(this, arguments) : null" onerror="window._cdn ? _cdn.failed(this, arguments) : null" crossorigin="anonymous"><script charset="utf-8" src="./0.28e9686a5449a847af12.min.js"></script></head><body><script type="text/javascript">
+/**
+ * A placeholder function that the build script uses to
+ * replace file paths with their CDN versions.
+ *
+ * @param {String} file_path - File path
+ * @returns {String}
+ */
+function vvv(file_path) {
+		 var vvv_warning = 'You cannot use vvv on dynamic values. Please make sure you only pass in static file paths.'; if (window.TS && window.TS.warn) { window.TS.warn(vvv_warning); } else { console.warn(vvv_warning); } 
+	return file_path;
+}
+
+var cdn_url = "https:\/\/a.slack-edge.com";
+var vvv_abs_url = "https:\/\/slack.com\/";
+var inc_js_setup_data = {
+	emoji_sheets: {
+		apple: 'https://a.slack-edge.com/80588/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png',
+		google: 'https://a.slack-edge.com/80588/img/emoji_2017_12_06/sheet_google_64_indexed_256.png',
+	},
+};
+</script><script type="text/javascript" crossorigin="anonymous" src="./webpack.manifest.d85b314130c5399fde33.min.js" onload="window._cdn ? _cdn.ok(this, arguments) : null" onerror="window._cdn ? _cdn.failed(this, arguments) : null"></script><script type="text/javascript" crossorigin="anonymous" src="./client-translations_pt-BR.c9178434f38ec8bfd785.min.js" onload="window._cdn ? _cdn.ok(this, arguments) : null" onerror="window._cdn ? _cdn.failed(this, arguments) : null"></script><script type="text/javascript" crossorigin="anonymous" src="./rollup-pdf_viewer.56816aeedbb3b40d62a8.min.js" onload="window._cdn ? _cdn.ok(this, arguments) : null" onerror="window._cdn ? _cdn.failed(this, arguments) : null"></script><article id="pdf_viewer"><section class="pdf_page" aria-label="Page 1"><canvas width="1080" height="607" style="width: 1080px; height: 607.5px;"></canvas><div class="textlayer" style="width: 1080px; height: 607.5px;"><div style="left: 139.472px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.1202);">Domingo</div><div style="left: 263.05px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.09593);">Segunda</div><div style="left: 412.047px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.12746);">Terça</div><div style="left: 545.431px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.12491);">Quarta</div><div style="left: 684.227px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.1265);">Quinta</div><div style="left: 825.291px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.11962);">Sexta</div><div style="left: 942.97px; top: 126.161px; font-size: 13.5px; font-family: sans-serif; transform: scaleX(1.08331);">Sábado</div><div style="left: 231.576px; top: 148.413px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">30</div><div style="left: 231.576px; top: 163.174px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 26</div><div style="left: 231.576px; top: 172.106px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 26.5</div><div style="left: 231.576px; top: 183.356px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.13196);">Middlewares e Tratamento </div><div style="left: 231.576px; top: 194.606px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.10576);">de Erros</div><div style="left: 369.561px; top: 148.413px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">31</div><div style="left: 369.561px; top: 163.174px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 26</div><div style="left: 369.561px; top: 172.106px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 26.6</div><div style="left: 369.561px; top: 183.356px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.14173);">Projeto - Talker Manager</div><div style="left: 507.546px; top: 148.413px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">01</div><div style="left: 507.546px; top: 163.174px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 26</div><div style="left: 507.546px; top: 172.106px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 26.7</div><div style="left: 507.546px; top: 183.356px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.14173);">Projeto - Talker Manager</div><div style="left: 645.532px; top: 148.413px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">02</div><div style="left: 645.532px; top: 166.549px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 645.532px; top: 175.481px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.1</div><div style="left: 645.532px; top: 186.731px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.16759);">Introdução - Arquitetura de </div><div style="left: 645.532px; top: 197.981px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.13347);">Software</div><div style="left: 783.517px; top: 148.413px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">03</div><div style="left: 783.517px; top: 163.174px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 783.517px; top: 172.106px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.2</div><div style="left: 783.517px; top: 183.356px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.16091);">Arquitetura de Software - </div><div style="left: 783.517px; top: 194.606px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12359);">Camada de Controller e </div><div style="left: 783.517px; top: 205.856px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.10482);">Service</div><div style="left: 921.502px; top: 148.413px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">04</div><div style="left: 123.697px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">05</div><div style="left: 231.576px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">06</div><div style="left: 231.576px; top: 254.984px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12704);">Feriado - Independência</div><div style="left: 369.561px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">07</div><div style="left: 369.561px; top: 254.984px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12704);">Feriado - Independência</div><div style="left: 507.546px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">08</div><div style="left: 507.546px; top: 244.927px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 507.546px; top: 253.859px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.3</div><div style="left: 507.546px; top: 265.109px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.1446);">Arquitetura Web - Rest e </div><div style="left: 507.546px; top: 276.359px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.11204);">Restful</div><div style="left: 645.532px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">09</div><div style="left: 645.532px; top: 248.302px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 645.532px; top: 257.234px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.4</div><div style="left: 645.532px; top: 268.484px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.0917);">Testando MSC</div><div style="left: 783.517px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">10</div><div style="left: 783.517px; top: 244.927px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 783.517px; top: 253.859px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.5</div><div style="left: 783.517px; top: 265.109px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.1341);">Projeto - Store Manager</div><div style="left: 921.502px; top: 230.166px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.22341);">11</div><div style="left: 123.697px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">12</div><div style="left: 231.576px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">13</div><div style="left: 231.576px; top: 325.555px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 231.576px; top: 334.487px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.6</div><div style="left: 231.576px; top: 345.737px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.1341);">Projeto - Store Manager</div><div style="left: 369.561px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">14</div><div style="left: 369.561px; top: 325.555px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 27</div><div style="left: 369.561px; top: 334.487px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 27.7</div><div style="left: 369.561px; top: 345.737px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.1341);">Projeto - Store Manager</div><div style="left: 507.546px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">15</div><div style="left: 507.546px; top: 325.555px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.13914);">Soft Skills</div><div style="left: 507.546px; top: 334.487px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.1467);">Dia inteiro sobre </div><div style="left: 507.546px; top: 345.737px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.131);">Criatividade</div><div style="left: 645.532px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">16</div><div style="left: 645.532px; top: 325.555px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 28</div><div style="left: 645.532px; top: 334.487px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 28.1</div><div style="left: 645.532px; top: 345.737px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.07561);">NodeJS - JWT (JSON Web </div><div style="left: 645.532px; top: 356.987px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.1641);">Token)</div><div style="left: 783.517px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">17</div><div style="left: 783.517px; top: 323.305px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 28</div><div style="left: 783.517px; top: 332.237px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 28.2</div><div style="left: 783.517px; top: 343.487px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.10328);">NodeJS - Upload de </div><div style="left: 783.517px; top: 354.737px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.13685);">arquivos com Multer</div><div style="left: 921.502px; top: 310.794px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">18</div><div style="left: 123.697px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">19</div><div style="left: 231.576px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">20</div><div style="left: 231.576px; top: 403.933px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 28</div><div style="left: 231.576px; top: 412.865px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 28.3</div><div style="left: 231.576px; top: 424.115px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.108);">NodeJS - Testando APIs </div><div style="left: 231.576px; top: 435.365px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.13749);">com Testes de Integração</div><div style="left: 369.561px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">21</div><div style="left: 369.561px; top: 406.183px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 28</div><div style="left: 369.561px; top: 415.115px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 28.4</div><div style="left: 369.561px; top: 426.365px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12682);">Projeto - Cook Master</div><div style="left: 507.546px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">22</div><div style="left: 507.546px; top: 406.183px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 28</div><div style="left: 507.546px; top: 415.115px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 28.5</div><div style="left: 507.546px; top: 426.365px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12682);">Projeto - Cook Master</div><div style="left: 645.532px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">23</div><div style="left: 645.532px; top: 406.183px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 28</div><div style="left: 645.532px; top: 415.115px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 28.6</div><div style="left: 645.532px; top: 426.365px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12682);">Projeto - Cook Master</div><div style="left: 783.517px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">24</div><div style="left: 783.517px; top: 406.183px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.11994);">Carreira</div><div style="left: 783.517px; top: 415.115px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.141);">Dia inteiro de Carreira</div><div style="left: 921.502px; top: 391.422px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">25</div><div style="left: 123.697px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">26</div><div style="left: 231.576px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">27</div><div style="left: 231.576px; top: 486.811px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 29</div><div style="left: 231.576px; top: 495.743px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 29.1</div><div style="left: 231.576px; top: 506.993px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.15818);">Introdução - Meu primeiro </div><div style="left: 231.576px; top: 518.243px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.12285);">Deploy com Heroku</div><div style="left: 369.561px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">28</div><div style="left: 369.561px; top: 486.811px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 29</div><div style="left: 369.561px; top: 495.743px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 29.2</div><div style="left: 369.561px; top: 506.993px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.11211);">Rodando em Produção - </div><div style="left: 369.561px; top: 518.243px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.08743);">Gerenciadores de Processos</div><div style="left: 507.546px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">29</div><div style="left: 507.546px; top: 486.811px; font-size: 7.5px; font-family: sans-serif; transform: scaleX(1.10803);">Bloco 29</div><div style="left: 507.546px; top: 495.743px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.25382);">Dia 29.3</div><div style="left: 507.546px; top: 506.993px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.14189);">Projeto - Stranger Things</div><div style="left: 645.532px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">30</div><div style="left: 645.532px; top: 486.743px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.09257);">Evento de OKR </div><div style="left: 716.6526416828838px; top: 487.4419787231428px; font-size: 9.000000287999999px; font-family: monospace;"></div><div style="left: 783.517px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">01</div><div style="left: 783.517px; top: 486.743px; font-size: 9px; font-family: sans-serif; transform: scaleX(1.09257);">Evento de OKR </div><div style="left: 854.6378335984098px; top: 487.4419787231428px; font-size: 9.000000287999999px; font-family: monospace;"></div><div style="left: 921.502px; top: 472.05px; font-size: 10.5px; font-family: sans-serif; transform: scaleX(1.14177);">02</div><div style="left: 113.014px; top: 87.2227px; font-size: 18px; font-family: sans-serif; transform: scaleX(1.15357);">Setembro/2021</div><div style="left: 113.014px; top: 49.5503px; font-size: 30px; font-family: sans-serif; transform: scaleX(0.999705);">Calendário</div></div></section></article></body></html>
