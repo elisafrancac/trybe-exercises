@@ -10,6 +10,8 @@ app.post('/user', middlewares.createUser);
 
 app.get('/user', middlewares.getAllUsers);
 
+app.get('/user/:id', middlewares.getUser);
+
 app.use(middlewares.error);
 
 app.listen(PORT, console.log(`Conectado na porta ${PORT}`));
