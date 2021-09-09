@@ -12,6 +12,8 @@ app.get('/user', middlewares.getAllUsers);
 
 app.get('/user/:id', middlewares.getUser);
 
+app.put('/user/:id', middlewares.updateUser);
+
 app.use(middlewares.error);
 
 app.listen(PORT, console.log(`Conectado na porta ${PORT}`));
