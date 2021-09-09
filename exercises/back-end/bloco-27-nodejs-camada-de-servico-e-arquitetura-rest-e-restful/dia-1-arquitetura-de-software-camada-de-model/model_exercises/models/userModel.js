@@ -34,7 +34,17 @@ const createUser = async ({ firstName, lastName, email, password }) => {
         .then((result) => ({ id: result.insertedId, firstName, lastName, email }));
 }
 
+const getUsers = async () => {
+    const db = await connection().then((db) => db.collection('users')
+    .find().toArray());
+
+    const formattedDb = db.map((item) => formatUser(item));
+
+    return formattedDb;
+}
+
 module.exports = {
     isValid,
     createUser,
+    getUsers,
 };
